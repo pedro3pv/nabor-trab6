@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+service MusicService {
+  rpc ListUsers (Empty) returns (UserList);
+  rpc ListSongs (Empty) returns (SongList);
+  rpc ListUserPlaylists (UserId) returns (PlaylistList);
+}
+
+message Empty {}
+
+message UserId { int32 id = 1; }
+
+message User {
+  int32 id = 1;
+  string name = 2;
+  string email = 3;
+}
+
+message Song {
+  int32 id = 1;
+  string title = 2;
+  string artist = 3;
+}
+
+message Playlist {
+  int32 id = 1;
+  string name = 2;
+  int32 user_id = 3;
+  repeated int32 song_ids = 4;
+}
+
+message UserList { repeated User users = 1; }
+message SongList { repeated Song songs = 1; }
+message PlaylistList { repeated Playlist playlists = 1; }
