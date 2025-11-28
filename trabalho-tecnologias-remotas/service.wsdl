@@ -1,0 +1,34 @@
+<definitions name="MusicService"
+             targetNamespace="http://www.examples.com/wsdl/MusicService.wsdl"
+             xmlns="http://schemas.xmlsoap.org/wsdl/"
+             xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+             xmlns:tns="http://www.examples.com/wsdl/MusicService.wsdl"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+ 
+   <message name="ListUsersRequest"></message>
+   <message name="ListUsersResponse">
+      <part name="users" type="xsd:string"/>
+   </message>
+ 
+   <portType name="MusicPortType">
+      <operation name="ListUsers">
+         <input message="tns:ListUsersRequest"/>
+         <output message="tns:ListUsersResponse"/>
+      </operation>
+   </portType>
+ 
+   <binding name="MusicBinding" type="tns:MusicPortType">
+      <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+      <operation name="ListUsers">
+         <soap:operation soapAction="ListUsers"/>
+         <input><soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+         <output><soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+      </operation>
+   </binding>
+ 
+   <service name="MusicService">
+      <port name="MusicPort" binding="tns:MusicBinding">
+         <soap:address location="http://localhost:8000/wsdl"/>
+      </port>
+   </service>
+</definitions>
