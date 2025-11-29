@@ -103,7 +103,7 @@ Realizamos testes de carga comparativos entre as implementações em **Python** 
 
 O gráfico abaixo mostra o desempenho máximo (RPS) alcançado por cada tecnologia nas duas linguagens.
 
-![Comparativo RPS](comparativo_lang_rps.jpg)
+![Comparativo RPS](./comparativo_lang_rps.png)
 
 **Análise:**
 
@@ -115,7 +115,7 @@ O gráfico abaixo mostra o desempenho máximo (RPS) alcançado por cada tecnolog
 
 Este gráfico ilustra o tempo médio de resposta (quanto menor, melhor).
 
-![Comparativo Latência](comparativo_lang_latencia.jpg)
+![Comparativo Latência](./comparativo_lang_latencia.png)
 
 **Análise:**
 
