@@ -54,17 +54,19 @@ Abaixo apresentamos a origem, características, vantagens, desvantagens e exempl
 
 Demonstração de como realizar a mesma operação ("Buscar Usuário") em cada tecnologia usando Python.
 
-```
+```python
 # --- 1. REST (usando Requests) ---
 import requests
 response = requests.get("http://localhost:8001/users/1")
 print(response.json())
+
 
 # --- 2. SOAP (usando Zeep) ---
 from zeep import Client
 client = Client('http://localhost:8000/soap_service?wsdl')
 result = client.service.get_user(id=1)
 print(result)
+
 
 # --- 3. GraphQL (usando Requests) ---
 query = """
@@ -78,6 +80,7 @@ query = """
 """
 response = requests.post("http://localhost:8002/graphql", json={'query': query})
 print(response.json())
+
 
 # --- 4. gRPC (usando grpcio) ---
 import grpc
@@ -95,10 +98,13 @@ with grpc.insecure_channel('localhost:50051') as channel:
 
 Realizamos testes de carga comparativos entre as implementações em **Python** e **TypeScript**. Os testes foram executados com a ferramenta **Locust**, simulando múltiplos usuários simultâneos.
 
+> **Nota sobre o Ambiente de Testes:**
+> Para garantir a consistência e reprodutibilidade dos resultados conforme exigido nas especificações do trabalho, todos os testes de carga foram executados de forma isolada em um **MacBook Pro M2 Pro com 16GB de RAM**. O ambiente foi configurado para minimizar a interferência de outros processos durante a coleta de métricas.
+
 ### Gráfico 1: Throughput (Requisições por Segundo)
 O gráfico abaixo mostra o desempenho máximo (RPS) alcançado por cada tecnologia nas duas linguagens.
 
-![Comparativo RPS](comparativo_lang_rps.jpg)
+![Comparativo RPS](./comparativo_lang_rps.png)
 
 **Análise:**
 *   **gRPC dominou:** Alcançou **~1400 RPS** (Python) e **~1300 RPS** (TypeScript), quase o triplo das outras tecnologias. Isso se deve à eficiência do HTTP/2 e da serialização binária (Protobuf).
@@ -108,7 +114,7 @@ O gráfico abaixo mostra o desempenho máximo (RPS) alcançado por cada tecnolog
 ### Gráfico 2: Latência Média (ms)
 Este gráfico ilustra o tempo médio de resposta (quanto menor, melhor).
 
-![Comparativo Latência](comparativo_lang_latencia.jpg)
+![Comparativo Latência](./comparativo_lang_latencia.png)
 
 **Análise:**
 *   **gRPC é praticamente instantâneo:** Latências na casa de **0.01ms a 0.03ms**, indicando overhead quase nulo de processamento.
