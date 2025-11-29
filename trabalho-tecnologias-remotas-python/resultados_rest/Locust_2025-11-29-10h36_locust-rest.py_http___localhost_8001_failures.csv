@@ -1,0 +1,10 @@
+Method,Name,Error,Occurrences
+GET,/songs,RemoteDisconnected('Remote end closed connection without response'),19136
+GET,/users/1/playlists,"ConnectionResetError(54, 'Connection reset by peer')",33308
+GET,/users/1/playlists,RemoteDisconnected('Remote end closed connection without response'),6282
+GET,/users,"ConnectionResetError(54, 'Connection reset by peer')",99982
+GET,/users/1/playlists,"ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x....>, 'Connection to localhost timed out. (connect timeout=None)')",73
+GET,/songs,"ConnectionResetError(54, 'Connection reset by peer')",99147
+GET,/songs,"ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x....>, 'Connection to localhost timed out. (connect timeout=None)')",226
+GET,/users,RemoteDisconnected('Remote end closed connection without response'),18901
+GET,/users,"ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x....>, 'Connection to localhost timed out. (connect timeout=None)')",232

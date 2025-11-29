@@ -1,0 +1,13 @@
+Method,Name,Error,Occurrences
+POST,GraphQL: users,"ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x....>, 'Connection to localhost timed out. (connect timeout=None)')",293
+POST,GraphQL: users with playlists,RemoteDisconnected('Remote end closed connection without response'),758
+POST,GraphQL: users with playlists,"ConnectionResetError(54, 'Connection reset by peer')",6999
+POST,GraphQL: songs,"ConnectionResetError(54, 'Connection reset by peer')",10731
+POST,GraphQL: users with playlists,"ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x....>, 'Connection to localhost timed out. (connect timeout=None)')",203
+POST,GraphQL: users,RemoteDisconnected('Remote end closed connection without response'),1060
+POST,GraphQL: full nested query,RemoteDisconnected('Remote end closed connection without response'),329
+POST,GraphQL: full nested query,"ConnectionResetError(54, 'Connection reset by peer')",3576
+POST,GraphQL: users,"ConnectionResetError(54, 'Connection reset by peer')",10611
+POST,GraphQL: songs,"ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x....>, 'Connection to localhost timed out. (connect timeout=None)')",302
+POST,GraphQL: full nested query,"ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x....>, 'Connection to localhost timed out. (connect timeout=None)')",108
+POST,GraphQL: songs,RemoteDisconnected('Remote end closed connection without response'),1104
