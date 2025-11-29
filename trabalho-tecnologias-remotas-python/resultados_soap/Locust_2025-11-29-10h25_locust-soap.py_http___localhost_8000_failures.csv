@@ -1,0 +1,4 @@
+Method,Name,Error,Occurrences
+POST,SOAP: list_songs,"ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x....>, 'Connection to localhost timed out. (connect timeout=None)')",6
+POST,SOAP: list_user_playlists,"ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x....>, 'Connection to localhost timed out. (connect timeout=None)')",10
+POST,SOAP: list_users,"ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x....>, 'Connection to localhost timed out. (connect timeout=None)')",12
