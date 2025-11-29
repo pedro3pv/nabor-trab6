@@ -139,14 +139,14 @@ class HeavyUser(GrpcUser):
 class StepLoadShape(LoadTestShape):
     """
     Formato de carga em degraus:
-    - Começa com 10 usuários
-    - Aumenta 20 a cada 30 segundos
-    - Máximo de 100 usuários
+    - Começa com 100 usuários
+    - Aumenta 100 a cada 5 segundos
+    - Máximo de 1000 usuários
     """
     
-    step_time = 30
-    step_load = 20
-    spawn_rate = 10
+    step_time = 5
+    step_load = 100
+    spawn_rate = 100
     time_limit = 180  # 3 minutos
     
     def tick(self):
@@ -156,7 +156,7 @@ class StepLoadShape(LoadTestShape):
             return None
         
         current_step = run_time // self.step_time
-        user_count = min(10 + current_step * self.step_load, 100)
+        user_count = min(100 + current_step * self.step_load, 1000)
         
         return (user_count, self.spawn_rate)
 
