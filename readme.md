@@ -156,19 +156,19 @@ pip install locust
 **Para testar REST:**
 
 ```
-locust -f locust-rest.py --host=http://localhost:8001
+locust -f locust_rest.py --host=http://localhost:8001
 ```
 
 **Para testar GraphQL:**
 
 ```
-locust -f locust-graphql.py --host=http://localhost:8002
+locust -f locust_graphql.py --host=http://localhost:8002
 ```
 
 **Para testar SOAP:**
 
 ```
-locust -f locust-soap.py --host=http://localhost:8000
+locust -f locust_soap.py --host=http://localhost:8000
 ```
 
 #### 4. Acesse a interface web:
@@ -212,13 +212,7 @@ npx ts-node grpc-server.ts
 **Teste Básico:**
 
 ```
-locust -f locust-grpc.py --host=localhost:50051
-```
-
-**Teste Avançado (com múltiplos tipos de usuários e carga em degraus):**
-
-```
-locust -f locust-grpc-advanced.py --host=localhost:50051
+locust -f locust_grpc.py --host=localhost:50051
 ```
 
 #### 4. Acesse a interface web:
