@@ -5,6 +5,7 @@ GraphQL usa POST com queries JSON
 """
 
 from locust import HttpUser, task, between
+from locust_global_time import StepLoadShape
 import json
 
 
@@ -132,3 +133,5 @@ if __name__ == "__main__":
     
     3. Acesse: http://localhost:8089
     """)
+
+## StepLoadShape agora é importado de locust-global-time.py

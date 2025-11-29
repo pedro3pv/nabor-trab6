@@ -1,5 +1,6 @@
 # locustfile.py
 from locust import HttpUser, task, between
+from locust_global_time import StepLoadShape
 
 class MusicStreamingUser(HttpUser):
     wait_time = between(1, 2)
@@ -16,3 +17,5 @@ class MusicStreamingUser(HttpUser):
     def view_playlist(self):
         # Exemplo simulando acesso a playlist do usuário 1
         self.client.get("/users/1/playlists")
+
+## StepLoadShape agora é importado de locust-global-time.py

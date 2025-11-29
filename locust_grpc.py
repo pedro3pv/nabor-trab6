@@ -6,7 +6,8 @@ Teste de Carga Avançado para gRPC com múltiplos cenários
 import grpc
 import time
 import random
-from locust import User, task, events, between, LoadTestShape
+from locust import User, task, events, between
+from locust_global_time import StepLoadShape
 
 try:
     import music_service_pb2
@@ -136,29 +137,7 @@ class HeavyUser(GrpcUser):
             self.client.list_user_playlists(user_id)
 
 
-class StepLoadShape(LoadTestShape):
-    """
-    Formato de carga em degraus:
-    - Começa com 100 usuários
-    - Aumenta 100 a cada 5 segundos
-    - Máximo de 1000 usuários
-    """
-    
-    step_time = 5
-    step_load = 100
-    spawn_rate = 100
-    time_limit = 180  # 3 minutos
-    
-    def tick(self):
-        run_time = self.get_run_time()
-        
-        if run_time > self.time_limit:
-            return None
-        
-        current_step = run_time // self.step_time
-        user_count = min(100 + current_step * self.step_load, 1000)
-        
-        return (user_count, self.spawn_rate)
+## StepLoadShape agora é importado de locust-global-time.py
 
 
 # Suprimir logs verbosos do gRPC

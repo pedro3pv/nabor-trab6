@@ -7,6 +7,7 @@ SOAP usa POST com XML, não GET com rotas REST
 from locust import HttpUser, task, between
 import time
 from locust import events
+from locust_global_time import StepLoadShape
 
 
 class SoapMusicStreamingUser(HttpUser):
@@ -100,3 +101,5 @@ if __name__ == "__main__":
     
     3. Acesse: http://localhost:8089
     """)
+
+## StepLoadShape agora é importado de locust-global-time.py
