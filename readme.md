@@ -98,8 +98,12 @@ with grpc.insecure_channel('localhost:50051') as channel:
 
 Realizamos testes de carga comparativos entre as implementações em **Python** e **TypeScript**. Os testes foram executados com a ferramenta **Locust**, simulando múltiplos usuários simultâneos.
 
-> **Nota sobre o Ambiente de Testes:**
-> Para garantir a consistência e reprodutibilidade dos resultados conforme exigido nas especificações do trabalho, todos os testes de carga foram executados de forma isolada em um **MacBook Pro M2 Pro com 16GB de RAM**. O ambiente foi configurado para minimizar a interferência de outros processos durante a coleta de métricas.
+> **🖥️ Especificação do Ambiente de Testes:**
+> 
+> Para cumprir os requisitos de validação e garantir a reprodutibilidade dos dados apresentados, todos os testes de carga foram executados de forma **isolada** no seguinte hardware:
+> *   **Equipamento:** MacBook Pro
+> *   **Processador:** Apple M2 Pro
+> *   **Memória RAM:** 16GB
 
 ### Gráfico 1: Throughput (Requisições por Segundo)
 O gráfico abaixo mostra o desempenho máximo (RPS) alcançado por cada tecnologia nas duas linguagens.
