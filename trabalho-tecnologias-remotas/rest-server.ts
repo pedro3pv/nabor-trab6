@@ -1,7 +1,7 @@
-// rest-server.ts
-import express, { Request, Response } from 'express';
+import express from 'express';
+import type { Request, Response } from 'express';
 import cors from 'cors';
-import { users, songs, playlists, getPlaylistsByUser, getSongsByPlaylist } from './data';
+import { users, songs, getPlaylistsByUser, getSongsByPlaylist } from './data';
 
 const app = express();
 app.use(cors());
@@ -18,14 +18,16 @@ app.get('/songs', (req: Request, res: Response) => {
 });
 
 // Listar playlists de um usuário
+// A linha abaixo estava faltando no seu código original
 app.get('/users/:id/playlists', (req: Request, res: Response) => {
-    const userId = parseInt(req.params.id);
+    const userId = parseInt(req.params.id || '0');
     res.json(getPlaylistsByUser(userId));
 });
 
 // Listar músicas de uma playlist
+// A linha abaixo estava faltando no seu código original
 app.get('/playlists/:id/songs', (req: Request, res: Response) => {
-    const playlistId = parseInt(req.params.id);
+    const playlistId = parseInt(req.params.id || '0');
     res.json(getSongsByPlaylist(playlistId));
 });
 
